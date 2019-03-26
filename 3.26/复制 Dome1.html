@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*body{background-image: url(img/1.jpg);width: 100%;background-size:100% auto;}*/
+			*{margin: 0;padding: 0;}
+			#box{width: 100%;background: darkgray;overflow: hidden;}
+			#box p:nth-child(1){float: left;padding-top: 10px;padding-bottom: 10px;cursor: pointer;margin-left:16%;}
+			#box p:nth-child(2){float: left;margin-left:50%;padding-top: 10px;padding-bottom: 10px;cursor: pointer;width: 300px;}
+			#box p:nth-child(2) span{margin-left: 10px;}
+			#box p:nth-child(2){background:url(img/ico.gif) no-repeat 185px 17px;}
+			#boxT_O{background:white;width: 500px; height: 330px;border: 1px solid #333;margin: 0 auto;position: relative;top: 230px;}
+			#boxT_One{width: 100%;background: #A9A9A9;}
+			#boxT_O p:nth-child(2){font-size: 17px;margin-left: 20px;margin-top: 20px;}
+			#boxT_O p:nth-child(2) input{width: 200px;}
+			#boxT_O p:nth-child(3){font-size: 17px;margin-left: 20px;margin-top: 20px;}
+			#boxT_O p:nth-child(3) input{width: 300px;height: 100px;}
+			#boxT_One p{padding: 5px 0 5px 20px;}
+			#boxT_One p span{float: right;margin-right: 20px;cursor: pointer;}
+			#boxT_O button{padding: 10px 30px;background: lawngreen;/*margin-left: 380px;margin-top: 24px;*/position:absolute;left: 380px;top: 260px;}
+			#boxT{background: #333333;width: 100%;height:750px; display: none;}
+			#boxO{ cursor: pointer;width: 100px;height: 150px;background: yellow;position: relative;left: 80%;/*bottom:750px;*/ display: none;}
+			#boxO ul{list-style: none;}
+			#boxO ul li{border-bottom: 1px solid #ccc;text-align: center;padding:8px;font-size: 15px;}
+			.boxT_OP3{color: red;text-align: center;margin-top: 20px;}
+			#boxThree{width: 700px;overflow: hidden;border: 1px solid #333;margin: 0 auto;margin-top: 40px;}
+			.boxThree_D{width: 90%;height: 250px;border: 1px solid #333;margin: 0 auto;border-radius: 5px;margin-top: 20px;margin-bottom: 20px;}
+			.boxThree_D p:nth-child(1){background:darkgray;width: 100%;}
+			.boxThree_D p:nth-child(1) span{padding: 20px;}
+			.boxThree_D p:nth-child(1) span:nth-child(2){margin-left: 350px;}
+			#box_four{width: 800px;height: 400px;border: 1px solid #333;margin: auto; position: absolute;top: 0;bottom: 0;left: 0;right: 0;}
+			#box_four p{cursor: pointer;}
+			#box_four ul{list-style: none;margin-top: 20px;}
+			#box_four ul li{float: left;border: 1px solid #333333;width: 175px;height: 150px;margin: 10px;}
+			#box_four ul li img{width: 100%;height: 100%;}
+		</style>
+	</head>
+	<body style="background: url(img/10.jpg);">
+		
+		<div id="box">
+			<p>
+				新浪博客
+			</p>
+			<p id="boxT_OP">
+				<span>首页</span>
+				<span>首页</span>
+				<span>首页</span>
+				<span id="box_Span">首页</span>
+			</p>
+		</div>
+		
+		<div id="boxT">
+			<div id="boxT_O">
+				<div id="boxT_One">
+					<p>发表博文<span id="boxT_OneSpan">+</span></p>
+				</div>
+				<p>
+					标题:<input type="text"id="InputT" class="BoxInp"/>(*不可为空)
+				</p>
+				<p>
+					内容:<input type="text"id="InputO" class="BoxInp" />(*不可为空)
+				</p>
+				<p id="boxT_OP3"></p>
+				<button id="box_but">发表</button>
+			</div>
+		</div>
+		
+		<div id="boxO">
+			<ul>
+				<li id="box_Li">
+					发文
+				</li>
+				<li id="box_LiTwo">
+					换肤
+				</li>
+				<li>
+					帮助
+				</li>
+				<li>
+					推出
+				</li>
+			</ul>
+		</div>
+		
+		<div id="box_four" style="display: none;">
+			<p id="oBoxP" style="float: right;padding-right: 20px;color: red;">关闭</p>
+			<ul>
+				<li style="background: url(img/2.jpg)"><img src="img/2.jpg"></li>
+				<li style="background: url(img/3.jpg)"><img src="img/3.jpg"></li>
+				<li style="background: url(img/4.jpg)"><img src="img/4.jpg"></li>
+				<li style="background: url(img/5.jpg)"><img src="img/5.jpg"</li>
+				<li style="background: url(img/10.jpg)"><img src="img/10.jpg"></li>
+				<li style="background: url(img/7.jpg)"><img src="img/7.jpg"></li>
+				<li style="background: url(img/8.jpg)"><img src="img/8.jpg"></li>
+				<li style="background: url(img/9.jpg)"><img src="img/9.jpg"></li>
+			</ul>
+		</div>
+
+		
+		 <div id="boxThree" style="background: white;">
+				<div id="boxThree_D" class="boxThree_D">
+				<div class="boxThree_D1">
+					<p id="box_P" class="box_P">
+						<span id="box_P3" class="box_P3">动态</span>
+						<span id="box_P4" class="box_P4">***-**-**&nbsp;**-**-**</span>
+					</p>
+					<p id="box_P1"></p>
+				</div>
+			</div>
+		</div> 
+	</body>
+</html>
+<!-- <script src="cookie.js"></script> -->
+<script type="text/javascript">
+	var oBox=document.getElementById("boxO");
+	var oBoxSpan=document.getElementById("box_Span");
+	var oBoxOp=document.getElementById("boxT_OP");
+	var oBoxLi=document.getElementById("box_Li");
+	
+	var oBoxT=document.getElementById("boxT");
+	var oBoxTOP3=document.getElementById("boxT_OP3");
+	var oBoxInp=document.getElementsByClassName("BoxInp");
+	var oBoxBut=document.getElementById("box_but");
+	var Clear=document.getElementById("boxT_OneSpan");
+	
+	
+	var oBoxThree=document.getElementById("boxThree");
+	var oBoxThreeO=document.getElementsByClassName("box_P1");
+	var oBoxThreeT=document.getElementsByClassName("box_P3");
+	var oBoxThreeF=document.getElementsByClassName("box_P4");
+	var InputO=document.getElementById("InputO");
+	var InputT=document.getElementById("InputT");
+	
+
+
+function setCookie(name, value , time) {
+		time = time ? parseFloat(time) : 0 ;
+		var exp = new Date();
+		exp.setTime(exp.getTime() + time);
+		// escape 这种编码方式过时了 改用 encodeURIComponent
+		// document.cookie = name + "=" + escape(value) + ";expires=" + (time ? exp.toGMTString() : 'session');
+		document.cookie = name + "=" + encodeURIComponent(value) + ";expires=" + (time ? exp.toGMTString() : 'session');
+}
+
+//获取cookie
+function getCookie(name) {
+    //userName=
+    var cookieName = encodeURIComponent(name) + '=';
+    //返回属性名的索引
+    var cookieStart = document.cookie.indexOf(cookieName);
+    //创建一个变量,用来保存cookie的值
+    var cookieValue = null;
+    //根据属性名查找cookie,如果大于0,那么这条cookie则存在,如果小于,则表示不存在
+    if(cookieStart >= 0){
+        var cookieEnd = document.cookie.indexOf(';', cookieStart);
+        if(cookieEnd == -1){
+            cookieEnd = document.cookie.length;
+        }
+        cookieValue = decodeURIComponent(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
+    }
+    return cookieValue;
+}
+
+//设置过期时间
+function setCookieDate(day){
+    if(typeof day == "number" && day > 0){
+        var date = new Date();
+        date.setDate(date.getDate() + day);
+    }else{
+        throw new Error('传递的day必须是一个天数，必须比0大');
+    }
+    return date;
+}
+
+//删除cookie
+function deleteCookie(name) {
+    document.cookie = name + "= ; expires=" + new Date(0);
+}
+deleteCookie("name");
+
+
+
+
+
+
+
+
+
+	var oBoxLiTwo=document.getElementById("box_LiTwo");
+	var oBoxFour=document.getElementById("box_four");
+	var oBoxFourLi=oBoxFour.getElementsByTagName("li");
+	var oBoxImg=oBoxFour.getElementsByTagName("img");
+	var Body=document.getElementsByTagName("body")[0];
+	var yy=document.getElementById("oBoxP");
+	var currentIndex = 0;
+
+	
+	oBoxLiTwo.onclick=function(){
+		oBoxFour.style.display="block";
+		oBox.style.display="none";
+	}
+	yy.onclick=function(){
+		oBoxFour.style.display="none";
+		oBox.style.display="none";
+	}
+	for(var i=0;i<oBoxFourLi.length;i++){
+		oBoxFourLi[i].index=i;
+		oBoxImg[i].index=i;
+		oBoxFourLi[i].onclick=function(){
+	
+			Body.style.background="url("+oBoxImg[this.index].src+")";
+			console.log(oBoxImg[this.index].src);
+			setCookie("name",oBoxImg[this.index].src,setCookieDate(7));
+			// console.log(getCookie("name"));
+		}
+		
+		
+	}
+
+	currentIndex = getCookie("name");
+    if(currentIndex){
+		Body.style.background="url("+currentIndex+")";
+			
+    }
+
+
+
+
+
+	
+	Clear.onclick=function(){
+		oBoxT.style.display="none";
+	}		
+	oBoxBut.onclick=function(){
+		for (var i=0;i<oBoxInp.length;i++) {
+			if(oBoxInp[i].value==""){
+				oBoxTOP3.innerHTML="*标题和内容不能为空";
+				oBoxTOP3.className="boxT_OP3";
+			}
+		}
+	}
+	
+	
+	var oDate=new Date();
+	
+	var nian =oDate.getFullYear();
+	var yue =oDate.getMonth();
+	var ri =oDate.getDate();
+	
+	var shi=oDate.getHours();
+	var fen=oDate.getMinutes();
+	var miao=oDate.getSeconds();
+	
+	function fun(a){
+		if(a<10){
+			return "0"+a;
+		}else{
+			return ""+a;
+		}
+	}
+	
+	oBoxBut.onclick=function(){
+			if(InputO.value!=""&&InputT.value!=""){
+				var a=document.createElement("div");
+				a.className="boxThree_D";
+				a.innerHTML = "<div class='boxThree_D1'>" + "<p id='box_P' class='box_P'>" + "<span class='box_P3'>"+InputT.value+"</span>"
+				+ "<span class='box_P4'>"+fun(nian)+"-"+(fun(yue+1))+"-"+fun(ri)+"&nbsp;"+fun(shi)+"-"+fun(fen)+"-"+fun(miao)+"</span>" + "</p>" + "<p class='box_P1'>"+InputO.value+"</p>" +"</div>";
+				oBoxThree.insertBefore(a,oBoxThree.children[0]);
+				oBoxT.style.display="none";
+				InputT.value="";
+				InputO.value="";
+			}
+	}
+	for (var i=0;i<oBoxInp.length;i++) {
+		oBoxInp[i].onclick=function(){
+			oBoxTOP3.innerHTML="*请输入标题名称";
+			oBoxTOP3.className="boxT_OP3";
+		}
+	}
+	oBoxLi.onclick=function(){
+		if(getStyle(oBoxT,"display")=="none"){
+			oBoxT.style.display="block";
+			oBox.style.display="none";
+		}else{
+			oBoxT.style.display="none";
+		}
+	}
+	function getStyle(obj,attr){    //获取非行间样式，obj是对象，attr是值
+	    if(obj.currentStyle){   //针对ie获取非行间样式
+	        return obj.currentStyle[attr];
+		    }else{
+		        return getComputedStyle(obj,false)[attr];   //针对非ie
+		    };
+		};
+	oBoxSpan.onclick=function(){
+		if(getStyle(oBox,"display")=="none"){
+			oBox.style.display="block";
+			oBoxOp.style.background="url(img/ico.gif) no-repeat 185px -10px";
+		}else{
+			oBox.style.display="none";
+			oBoxOp.style.background="url(img/ico.gif) no-repeat 185px 17px";
+		}
+	}
+</script>

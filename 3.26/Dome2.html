@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        /* .box{overflow: hidden;width: 400px;height: auto;} */
+        .boxOne{width: 400px;height: auto;border: 1px solid #333; position: absolute;top: 100px;left: 100px;z-index: 9999;background: #ccc;}
+        .boxOne{height: 48px;line-height: 48px;text-align: center;border-bottom: 1px solid #ccc;}
+        .boxTwo{padding: 20px 20px}
+        .boxTwo{width: 100%;height: 100%;background: #000;opacity: 0.4;filter: Alpha(opacity=40);position: absolute;top: 0;left: 0;display: none}
+    </style>
+</head>
+<body>
+    
+    <div id="box" class="box">
+        <div class="boxOne" id="boxOne">
+                移动
+        </div>
+       
+    </div>
+    <div class="boxTwo" id="boxTwo" onslectatart="return false"></div>
+
+
+
+</body>
+</html>
+<script>
+    //获取元素Id的函数
+    function fun(id){return document.getElementById(id)};
+    //自动居中函数
+    function autoFun(event){
+        var bodyW=document.documentElement.clientLeft;
+        var bodyH=document.documentElement.clientHeight;
+
+        var eventW=event.offsetWidth;
+        var eventH=event.offsetHeight;
+
+        event.style.left=(bodyW-eventW)/2+"px";
+        event.style.top=(bodyH-eventH)/2+"px";
+    }
+    //遮罩 自动全屏
+    function zhezhao(event){
+         event.style.width=document.documentElement.clientWidth+"px";
+         event.style.height=document.documentElement.clientHeight+"px";
+    }
+    var mouseoffY=0;  //偏移
+    var mouseoffX=0;
+    var kk=false;  //是否可拖拽
+    fun("boxOne").mousedown= function(e){
+       var e=e||window.event;
+       mouseoffX=e.pageX-fun("box").offsetLeft;   //鼠标按下后当前的坐标
+       mouseoffY=e.pageY-fun("box").offsetTop;
+       kk=true;
+    }
+    document.onmousemove=function(e){
+        var e=e||window.event;
+        var mouseX=e.pageX;   //鼠标当前位置坐标
+        var mouseY=e.pageY;
+
+        var moveX=0;            //浮层元素的新位置
+        var moveY=0;
+        if(kk===true){
+            moveX=mouseX-mouseoffX;
+            moveY=mouseY-mouseoffY;
+
+            var pageWidth=document.documentElement.clientWidth;
+            var pageHeight=document.documentElement.clientHeight;
+
+            var boxWidth=fun("box").offsetWidth;
+            var boxHeight=fun("box").offsetHeight;
+
+            var maxX=pageWidth-boxWidth;
+            var maxY=pageHeight-boxHeight;
+
+            moveX=Math.min(maxX,Math.max(0,mouseX));
+            moveY=Math.min(maxY,Math.max(0,mouseY));
+
+
+            fun("box").style.left=moveX+"px"; 
+            fun("box").style.top=moveY+"px";
+        }
+
+    }
+
+
+    //鼠标松开后
+     document.onmouseup=function(){
+        kk=false;
+     }
+</script>
