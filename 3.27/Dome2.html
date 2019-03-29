@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .boxOne{background: #ccc;overflow: hidden; }
+        .boxOne ul{list-style: none;}
+        .boxOne ul li{ float: left; width: 10px;height: 10px;border: 1px solid #333;margin: 20px;}
+        .boxTwo{width: 800px;height: 400px;border: 3px solid #333;clear: both;margin-top: 40px;}
+        .boxThree{width: 100%;height: 40px;background: #ccc;margin-top: 40px;}
+    </style>
+</head>
+<body>
+    <div class="boxOne" id="boxOne">
+        选择页面风格：
+        <ul>
+            <li style="background: red;"></li>
+            <li style="background: greenyellow;"></li>
+            <li style="background: blue;"></li>
+        </ul>
+    </div>
+    <div class="boxTwo" id="boxTwo">
+        换肤测试
+    </div>
+    <div class="boxThree" id="boxThree"></div>
+</body>
+</html>
+<script>
+
+    function getId(id){
+        return document.getElementById(id);
+    }
+    var oBoxLi=getId("boxOne").getElementsByTagName("li");
+    
+    for(var i=0;i<oBoxLi.length;i++){
+        // console.log(oBoxLi[i].style.background);
+        oBoxLi[i].onclick=function(){
+            getId("boxThree").style.background= this.style.background;
+            getId("boxTwo").style.borderColor=this.style.background;
+            for(var i=0;i<oBoxLi.length;i++){
+                oBoxLi[i].style.width="10px";
+                oBoxLi[i].style.height="10px";
+            }
+            this.style.width="20px";
+            this.style.height="20px";
+        }
+    }
+
+</script>

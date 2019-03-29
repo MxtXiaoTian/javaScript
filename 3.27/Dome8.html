@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .box{width: 200px;margin: 0 auto;background: darkgray}
+        .box p{cursor: pointer;}
+        .box ul{list-style: none; display: none;}
+        .box ul li a{color: #ccc;text-decoration: none;}
+        .box ul li a:hover{color: red;text-decoration: underline;}
+        .box ul li:hover{background: greenyellow}
+    </style>
+</head>
+<body>
+    <div class="box" >
+        <p id="box">播放列表</p>
+        <ul id="hh">
+            <li><a href="javascript:;">玩家之徒 - 蔡依林</a></li>
+            <li><a href="javascript:;">原谅我就是这样的女生 - 戴佩妮</a></li>
+            <li><a href="javascript:;">猜不透 - 丁当</a></li>
+            <li><a href="javascript:;">自导自演 - 周杰伦</a></li>
+            <li><a href="javascript:;">浪漫窝 - 弦子</a></li>
+            <li><a href="javascript:;">流年 - 王菲</a></li>        
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    var kk=document.getElementById("box");
+    
+    function getStyle(obj, attr){
+        if(obj.currentStyle)
+        {
+            return obj.currentStyle[attr];
+        }
+        else
+        {
+            return getComputedStyle(obj,false)[attr];
+        }
+
+    }
+
+    kk.onclick=function(){
+        if(getStyle( hh, "display")=="none"){
+            hh.style.display="block";
+        }else{
+            hh.style.display="none";
+        }
+    }
+
+</script>

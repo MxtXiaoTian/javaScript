@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        html{width: 100%;height: 100%;}
+        .box{width: 200px;margin: 0 auto;}
+        .hh{display: none}
+        .hh p{cursor: pointer;}
+        .hh ul{list-style: none;}
+        .hh ul li a{color: #ccc;text-decoration: none;}
+        .hh{width: 400px;height: 300px;border: 1px solid #333; margin:auto;position: absolute;top: 0;left: 0;bottom: 0;right: 0;}
+        .hh p{border-bottom: 1px solid #ccc;padding: 20px;line-height: 20px;}
+        .hh p span{float: right;}
+        .KK{width: 100%;height: 100%; background: grey;position: absolute;top: 0;left: 0;}
+    </style>
+</head>
+<body>
+        <div class="box" id="box" >
+                <button>弹出</button>
+        </div>
+        <div class="kk"id="kk"></div>
+        <div class="hh" id="hh">
+                <p id="boxP">播放列表    <span id="jj">关闭</span> </p>
+        </div>
+</body>
+</html>
+<script>
+
+    function getId(id){
+        return document.getElementById(id);
+    }
+
+    getId("box").onclick=function(){
+        getId("hh").style.display="block";
+    }
+    getId("jj").onclick=function(){
+        getId("hh").style.display="none";
+    }
+
+    function getWidth(){
+        var w = document.documentElement.clientWidth || document.body.clientWidth;
+        return w;
+    }
+    function getHeight(){
+        var h= document.documentElement.clientHeight || document.body.clientHeight;
+        return h;
+    }
+    //鼠标按下
+    getId("hh").onmousedown = function (event) {
+		
+        var e = event || window.event;
+        //点击的坐标距离盒子本身的距离
+        var disX = e.clientX -getId("hh").offsetLeft;
+        var disY = e.clientY - getId("hh").offsetTop;
+        document.onmousemove = function (event) {
+            var e = event || window.event;
+            var l = e.clientX - disX;
+            var t = e.clientY - disY;
+            if(t <= 0){
+                t = 0;
+            }
+            if(l <= 0){
+                l = 0;
+            }
+            if(l > getWidth() - getId("hh").offsetWidth){
+                l = getWidth() - oBoxFour.offsetWidth;
+            }
+            if(t > getHeight() - getId("hh").offsetHeight){
+                t = getHeight() - getId("hh").offsetHeight;
+            }
+            getId("hh").style.left = l + "px";
+            getId("hh").style.top = t + "px";
+			getId("hh").style.position="";
+			getId("hh").style.margin="0";
+        }
+        document.onmouseup = function () {
+            document.onmousemove = null;
+        }
+    }
+
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <input type="text" id="inp"><button id="but">是否为两位数</button>
+    </div>
+</body>
+</html>
+<script>
+
+    var inp=document.getElementById("inp");
+    var but=document.getElementById("but");
+
+    but.onclick=function(){
+        if(/^\d{2}$/.test(parseInt(inp.value))){
+            alert("是");
+
+        }else{
+            alert("不是");
+        }
+    }
+
+
+</script>

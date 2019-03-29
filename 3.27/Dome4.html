@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        .box{text-align: center;margin-bottom: 30px;}
+        .boxOne{width: 200px;height: 200px;background: #333;margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <button>变大</button>
+        <button>变小</button>
+        <button>变色</button>
+        <button>隐藏</button>
+        <button>显示</button>
+        <button>重置</button>
+    </div>
+    <div class="boxOne"  id="boxOne"></div>
+</body>
+</html>
+<script>
+    //获取Id的方法
+    function getId(id){
+        return document.getElementById(id);
+    }
+    var but=getId("box").getElementsByTagName("button");
+    var index=200;
+    for(var i=0;i<but.length;i++){
+        but[i].onclick=function(){
+            if(this.innerHTML=="变大"){
+                index++;
+                getId("boxOne").style.width=index+"px";
+                getId("boxOne").style.height=index+"px";
+            }else if(this.innerHTML=="变小"){
+                index--;
+                getId("boxOne").style.width=index+"px";
+                getId("boxOne").style.height=index+"px";
+            }else if(this.innerHTML=="变色"){
+                getId("boxOne").style.background="#"+parseInt((Math.random()*254+1))+parseInt((Math.random()*254+1))+parseInt((Math.random()*254+1));
+            }else if(this.innerHTML=="隐藏"){
+                getId("boxOne").style.display="none";
+            }else if(this.innerHTML=="显示"){
+                getId("boxOne").style.display="block";
+            }else{
+                getId("boxOne").style.display="block";
+                getId("boxOne").style.background="#333";
+                getId("boxOne").style.width="200px";
+                getId("boxOne").style.height="200px";
+                getId("boxOne").style.margin="0 auto";
+            }
+        }
+    }
+    
+</script>

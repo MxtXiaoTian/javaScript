@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         .box{width: 300px;margin: 0 auto;}
+         .vv{width: 200px;height: 200px;background: #333;margin-top: 20px}
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <p>属性名<input type="text"  id="boxInpOne"></p>
+        <p>属性值<input type="text"  id="boxInpTwo"></p>
+        <button  id="boxButOne">确定</button>
+        <button  id="boxButTwo">重置</button>
+        <div class="vv" id="vv">塞飞鹅ui</div>
+    </div>
+</body>
+</html>
+<script>
+    function getId(id){
+        return document.getElementById(id);
+    }
+
+    var changeStyle = function (elem, name, value) {
+	    elem.style[name] = value;	
+    }
+
+
+    
+
+    getId("boxButOne").onclick=function(){
+        changeStyle(getId("vv"),getId("boxInpOne").value,getId("boxInpTwo").value);
+    }
+
+    getId("boxButTwo").onclick=function(){
+        getId("vv").removeAttribute("style");
+    }
+</script>

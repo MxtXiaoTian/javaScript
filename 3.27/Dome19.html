@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <input type="text" id="inp1" value="1">: <input type="text" id="inp2"value="2">
+        <button id="but">最大值为</button> <span id="sp1"></span>
+    </div>
+</body>
+</html>
+<script>
+    function getId(id){
+        return document.getElementById(id);
+    }
+    
+    // console.log(parseInt(getId("inp1").value));
+    getId("but").onclick=function(){
+        var a=Math.max(parseInt(getId("inp1").value) ,parseInt(getId("inp2").value))
+        getId("sp1").innerHTML=a;
+    }
+</script>

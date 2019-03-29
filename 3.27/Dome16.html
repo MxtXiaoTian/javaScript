@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" id="box">
+
+    </div>
+</body>
+</html>
+<script>
+    
+function hh(b){
+    if(b<10){
+        return "0"+b
+    }else{
+        return ""+b
+    }
+}
+
+    function fun(Id){
+        var date= new Date();
+        var a=date.getHours();
+        var b=date.getMinutes();
+        var c=date.getSeconds();
+        var d=hh(a)+":"+hh(b)+":"+hh(c);
+        document.getElementById(Id).innerHTML=d;
+    }
+    window.setInterval(function(){
+        fun("box");
+    },1000)
+
+</script>

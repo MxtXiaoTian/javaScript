@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{width: 300px;margin: 0 auto;}
+        .box ul{list-style: none;}
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <ul>
+            <li> <input type="checkbox" name="" id="q">全选
+                <span id="a">反选</span>
+            </li>
+            <li> <input type="checkbox" name="" id="w">选项1</li>
+            <li> <input type="checkbox" name="" id="e">选项2</li>
+            <li> <input type="checkbox" name="" id="r">选项3</li>
+            <li> <input type="checkbox" name="" id="t">选项4</li>
+            <li> <input type="checkbox" name="" id="y">选项5</li>
+            <li> <input type="checkbox" name="" id="u">选项6</li>
+            <li> <input type="checkbox" name="" id="i">选项7</li>
+            <li> <input type="checkbox" name="" id="o">选项8</li>
+            <li> <input type="checkbox" name="" id="p">选项9</li>
+            
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+
+    var box=document.getElementById("box");
+    var boxLi=box.getElementsByTagName("input");
+    // var Inp=boxLi.getElementsByTagName("input");
+    var boxQ=document.getElementById("q");
+    
+    window.onload=function(){
+        for(var i=0;i<boxLi.length;i++){
+            console.log(boxLi[i]);
+            if(boxQ.checkbox==true){
+                boxLi[i].checkbox=true;
+            }
+        }
+    }
+   
+
+</script>

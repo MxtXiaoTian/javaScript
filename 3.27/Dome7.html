@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .box{margin: 0 auto; width: 300px;}
+        ul{border: 1px solid yellow;width: 100%;list-style: none;margin-top: 10px;display: none;cursor: pointer;}
+        ul li:nth-child(2){border-bottom: 1px solid yellow}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <button id="but">输入法</button>
+        <ul id="oBoxUl">
+            <li>手写</li>
+            <li>拼音</li>
+            <li id="kk">关闭</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+
+    function getId(id){
+        return document.getElementById(id);
+    }
+
+
+    function getStyle(obj, attr){
+        if(obj.currentStyle)
+        {
+            return obj.currentStyle[attr];
+        }
+        else
+        {
+            return getComputedStyle(obj,false)[attr];
+        }
+
+    }
+
+
+    getId("but").onclick=function(){
+        if(getStyle( getId("oBoxUl"), "display")=="none"){
+            getId("oBoxUl").style.display="block";
+        }else{
+            getId("oBoxUl").style.display="none";
+        }
+    }
+
+    getId("kk").onclick=function(){
+        getId("oBoxUl").style.display="none";
+    }
+        
+
+</script>

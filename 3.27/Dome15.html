@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<lable><input type="text"  value="1,2,3,4" /><span>输入数字求和，数字之间用半角","号分隔</span></lable>
+		<br />
+		<button>和</button>
+		<strong class="sum"></strong>
+	</body>
+</html>
+	<script type="text/javascript">
+		var oIn=document.getElementsByTagName("input")[0];
+		var oBtn=document.getElementsByTagName("button")[0];
+		var oSum=document.getElementsByTagName("strong")[0];
+		oBtn.onclick=function(){
+			sum=0;
+			var vlue=oIn.value;
+			var aVlue=vlue.split(",");
+			for (var i=0;i<aVlue.length;i++) {
+				sum+=parseInt(aVlue[i]);
+			}
+				oSum.innerHTML=sum;
+		}
+	</script>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.box{width: 900px;border: 1px solid #333;margin: 0 auto;}
+			.box ul{overflow: hidden;cursor: pointer;}
+			.box ul li{float: left;list-style: none;width: 100px;height: 50px;line-height: 50px;text-align: center;border: 1px solid #333;margin: 20px;}
+			.box ul .box_L{background: palevioletred;color: white;}
+			.box_T{width: 900px;border: 1px solid #333;margin: 0 auto;padding: 30px;margin-top: 30px;}
+			.box_T h5{line-height: 30px;}
+			.box_T p{line-height: 30px;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li class="box_L">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+				<li>10</li>
+				<li>11</li>
+				<li>12</li>
+			</ul>
+		</div>
+		<div class="box_T">
+			<h5>这是第1月内容</h5>
+			<hr />
+			<p>这是第1月内容</p>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	  var oArray = [
+        "元旦：1月1日至3日放假三天。",
+        "春节：2月2日至8日放假7天。",
+        "妇女节：3月8日妇女节，与我无关。",
+        "清明节：4月3日至5日放假3天",
+        "劳动节：4月30日至5月2日放假3天。",
+        "端午节：6月4日至6日放假3天。",
+        "小暑：7月7日小暑。不放假。",
+        "七夕节：8月6日七夕节。不放假。",
+        "中秋节：9月10日至12日放假3天。",
+        "国庆节：10月1日至7日放假7天。",
+        "立冬：11月8日立冬。不放假。",
+        "艾滋病日:12月1日<br />废除奴隶制国际日:12月2日。"
+    ];
+	var oL=document.getElementsByTagName("li");
+	var oDiv=document.getElementsByClassName("box_T")[0];
+	var oH=oDiv.getElementsByTagName("h5")[0];
+	var oP=oDiv.getElementsByTagName("p")[0];
+	oP.innerHTML=oArray[0];
+	for (var i=0;i<oL.length;i++) {
+		oL[i].index=i;
+		oL[i].onmouseover=function(){
+			for (var i=0;i<oL.length;i++) {
+				oL[i].className="";
+			}
+				this.className="box_L";
+				oH.innerHTML="这是第"+(this.index+1)+"月内容";
+				oP.innerHTML=oArray[this.index];
+		}
+	}
+</script>

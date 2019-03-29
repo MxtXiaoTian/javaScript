@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="box">
+
+        <span id="kk">2</span>:<span id="kk1">22</span>:<span id="kk2">10</span>
+
+    </div>
+
+    <button id="but">开始</button>
+
+
+</body>
+</html>
+
+<script>
+
+
+    function getId(id){
+        return document.getElementById(id);
+    }
+    function hh(b){
+        if(b<10){
+                return "0"+b
+            }else{
+                return ""+b
+         }
+    }
+    var shi=0;
+    var fen=0;
+    var miao=0;
+                miao= getId("kk2").innerHTML;
+                fen= getId("kk1").innerHTML;
+                shi= getId("kk").innerHTML;
+    var pp= getId("but").onclick=function(){
+        if(getId("but").innerHTML=="开始"){
+            setInterval(function(){                     
+                miao--;
+                getId("kk2").innerHTML=hh(miao);
+                getId("but").innerHTML="停止";
+                if(miao<0){    
+                    miao=59;
+                    fen--;
+                    if(miao==-1){
+                        miao=59;
+                    }
+                    getId("kk2").innerHTML=miao;
+                    getId("kk1").innerHTML=hh(fen);
+                        if(fen<0){   
+                            fen=59;
+                            shi--;
+                            if(fen==-1){
+                                fen=59;
+                            }
+                            getId("kk1").innerHTML=fen;
+                            getId("kk").innerHTML=hh(shi);
+                                if(shi==0){
+                                    hgetId("kk").innerHTML=hh(0); 
+                                }  
+                    }
+                    if(shi=0&&fen==0&&miao==0){
+                        clearInterval(pp);
+                    } 
+                }   
+            },1000)
+        }
+    }
+
+
+
+    
+</script>

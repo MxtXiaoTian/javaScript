@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{width: 100px;margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <button id="kk">0</button>
+    </div>
+</body>
+</html>
+<script>
+    var kk=document.getElementById("kk");
+    var index=0;
+    kk.onclick=function(){
+        index++;
+        kk.innerHTML=index;
+    }
+</script>
